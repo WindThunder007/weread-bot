@@ -5,8 +5,7 @@ on:
   schedule:
      - cron: '0 17 * * *'    # UTC 00:00 = 北京时间 01:00
      - cron: '0 12 * * *'   # UTC 12:00 = 北京时间 20:00
-     - cron: '0 13 * * *'   # UTC 12:00 = 北京时间 21:00
-     - cron: '0 14 * * *'   # UTC 12:00 = 北京时间 22:00
+     
   
   # 拉取请求触发，用于测试阅读
   pull_request:
@@ -67,8 +66,8 @@ jobs:
 
         reading:
           mode: "${{ github.event.inputs.reading_mode || 'smart_random' }}"
-          # 目标阅读时长（分钟），支持区间随机，格式如："1" 或 "1-2"，当前为：3分钟
-          target_duration: "${{ github.event.inputs.target_duration || '3' }}"
+          # 目标阅读时长（分钟），支持区间随机，格式如："1" 或 "1-2"，当前为：2分钟
+          target_duration: "${{ github.event.inputs.target_duration || '2' }}"
           reading_interval: "30-48"
           use_curl_data_first: true
           fallback_to_config: true
